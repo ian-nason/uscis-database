@@ -1,0 +1,501 @@
+{
+  "built_utc": "2026-11-03T01:21:48.062814+00:00",
+  "dataset": "uscis",
+  "is_pilot": false,
+  "full_source_hashes_verified": true,
+  "input_file_hashes_verified": true,
+  "source_lock_sha256": "0246b344f71b9d408d63c3d32a23bb442466bec1be62bcd6f490dddf8ace0134",
+  "duckdb": "1.5.6",
+  "memory_limit": "2GiB",
+  "threads": 1,
+  "spill_limit": "4GiB",
+  "working_cap_bytes": 8589934592,
+  "physical_reserve_bytes": 2147483648,
+  "tables": {
+    "daca_applications": {
+      "rows": 4526373,
+      "schema": [
+        [
+          "_source_row",
+          "BIGINT"
+        ],
+        [
+          "unique_identifier",
+          "VARCHAR"
+        ],
+        [
+          "ben_year_of_birth",
+          "INTEGER"
+        ],
+        [
+          "ben_country_of_birth",
+          "VARCHAR"
+        ],
+        [
+          "immigration_status",
+          "VARCHAR"
+        ],
+        [
+          "classification",
+          "VARCHAR"
+        ],
+        [
+          "form_number",
+          "VARCHAR"
+        ],
+        [
+          "form_type",
+          "VARCHAR"
+        ],
+        [
+          "latest_trvl_depart_yr",
+          "INTEGER"
+        ],
+        [
+          "latest_trvl_return_yr",
+          "INTEGER"
+        ],
+        [
+          "status",
+          "VARCHAR"
+        ],
+        [
+          "status_date",
+          "DATE"
+        ],
+        [
+          "uscis_field_office",
+          "VARCHAR"
+        ],
+        [
+          "uscis_service_center",
+          "VARCHAR"
+        ],
+        [
+          "data_source",
+          "VARCHAR"
+        ],
+        [
+          "lpr_date",
+          "DATE"
+        ],
+        [
+          "ben_gender",
+          "VARCHAR"
+        ],
+        [
+          "rec_date",
+          "DATE"
+        ],
+        [
+          "decision_date",
+          "DATE"
+        ],
+        [
+          "decision",
+          "VARCHAR"
+        ],
+        [
+          "latest_notice_type",
+          "VARCHAR"
+        ],
+        [
+          "latest_notice_date",
+          "DATE"
+        ],
+        [
+          "latest_rfe_date",
+          "DATE"
+        ],
+        [
+          "latest_noid_date",
+          "DATE"
+        ],
+        [
+          "g28_flag",
+          "VARCHAR"
+        ],
+        [
+          "duplicate_identifier",
+          "INTEGER"
+        ],
+        [
+          "duplicate_last",
+          "BOOLEAN"
+        ],
+        [
+          "duplicate_likely",
+          "BOOLEAN"
+        ],
+        [
+          "duplicate_drop_row",
+          "BOOLEAN"
+        ],
+        [
+          "file_original",
+          "VARCHAR"
+        ],
+        [
+          "row_original",
+          "INTEGER"
+        ],
+        [
+          "form_type_filled_in",
+          "VARCHAR"
+        ]
+      ],
+      "exact_rows_compared": 4526373,
+      "null_counts": {
+        "_source_row": 0,
+        "unique_identifier": 19135,
+        "ben_year_of_birth": 1326379,
+        "ben_country_of_birth": 52,
+        "immigration_status": 3685368,
+        "classification": 3520717,
+        "form_number": 0,
+        "form_type": 1291563,
+        "latest_trvl_depart_yr": 4410604,
+        "latest_trvl_return_yr": 4409873,
+        "status": 0,
+        "status_date": 0,
+        "uscis_field_office": 3199992,
+        "uscis_service_center": 0,
+        "data_source": 0,
+        "lpr_date": 4497090,
+        "ben_gender": 3,
+        "rec_date": 0,
+        "decision_date": 0,
+        "decision": 0,
+        "latest_notice_type": 1361660,
+        "latest_notice_date": 1361660,
+        "latest_rfe_date": 4212205,
+        "latest_noid_date": 4509780,
+        "g28_flag": 0,
+        "duplicate_identifier": 0,
+        "duplicate_last": 0,
+        "duplicate_likely": 19135,
+        "duplicate_drop_row": 0,
+        "file_original": 0,
+        "row_original": 0,
+        "form_type_filled_in": 5
+      },
+      "duplicate_source_key_groups": 0,
+      "duplicate_flag_relationship_errors": 0,
+      "flagged_drop_rows": 149,
+      "likely_duplicate_rows": 297,
+      "null_duplicate_flags": 0,
+      "missing_applicant_ids": 19135,
+      "missing_source_keys": 0,
+      "decision_before_receipt_rows": 15853,
+      "date_ranges": {
+        "status_date": [
+          "2012-08-30",
+          "2026-02-11"
+        ],
+        "lpr_date": [
+          "1987-08-22",
+          "2025-09-25"
+        ],
+        "rec_date": [
+          "2012-08-05",
+          "2026-02-11"
+        ],
+        "decision_date": [
+          "2012-08-30",
+          "2026-02-11"
+        ],
+        "latest_notice_date": [
+          "2015-11-17",
+          "2026-02-11"
+        ],
+        "latest_rfe_date": [
+          "2012-09-17",
+          "2026-02-11"
+        ],
+        "latest_noid_date": [
+          "2012-10-05",
+          "2026-02-10"
+        ]
+      }
+    },
+    "tps_applications": {
+      "rows": 6680172,
+      "schema": [
+        [
+          "_source_row",
+          "BIGINT"
+        ],
+        [
+          "unique_identifier",
+          "VARCHAR"
+        ],
+        [
+          "ben_year_of_birth",
+          "INTEGER"
+        ],
+        [
+          "ben_country_of_birth",
+          "VARCHAR"
+        ],
+        [
+          "immigration_status",
+          "VARCHAR"
+        ],
+        [
+          "classification",
+          "VARCHAR"
+        ],
+        [
+          "form_number",
+          "VARCHAR"
+        ],
+        [
+          "form_type",
+          "VARCHAR"
+        ],
+        [
+          "latest_trvl_depart_yr",
+          "INTEGER"
+        ],
+        [
+          "latest_trvl_return_yr",
+          "INTEGER"
+        ],
+        [
+          "status",
+          "VARCHAR"
+        ],
+        [
+          "status_date",
+          "DATE"
+        ],
+        [
+          "uscis_field_office",
+          "VARCHAR"
+        ],
+        [
+          "uscis_service_center",
+          "VARCHAR"
+        ],
+        [
+          "data_source",
+          "VARCHAR"
+        ],
+        [
+          "lpr_date",
+          "DATE"
+        ],
+        [
+          "ben_gender",
+          "VARCHAR"
+        ],
+        [
+          "rec_date",
+          "DATE"
+        ],
+        [
+          "decision_date",
+          "DATE"
+        ],
+        [
+          "decision",
+          "VARCHAR"
+        ],
+        [
+          "latest_notice_type",
+          "VARCHAR"
+        ],
+        [
+          "latest_notice_date",
+          "DATE"
+        ],
+        [
+          "latest_rfe_date",
+          "DATE"
+        ],
+        [
+          "latest_noid_date",
+          "DATE"
+        ],
+        [
+          "g28_flag",
+          "VARCHAR"
+        ],
+        [
+          "duplicate_identifier",
+          "INTEGER"
+        ],
+        [
+          "duplicate_last",
+          "BOOLEAN"
+        ],
+        [
+          "duplicate_likely",
+          "BOOLEAN"
+        ],
+        [
+          "duplicate_drop_row",
+          "BOOLEAN"
+        ],
+        [
+          "file_original",
+          "VARCHAR"
+        ],
+        [
+          "row_original",
+          "INTEGER"
+        ]
+      ],
+      "exact_rows_compared": 6680172,
+      "null_counts": {
+        "_source_row": 0,
+        "unique_identifier": 604,
+        "ben_year_of_birth": 3402411,
+        "ben_country_of_birth": 2637,
+        "immigration_status": 1241049,
+        "classification": 6679951,
+        "form_number": 0,
+        "form_type": 5801,
+        "latest_trvl_depart_yr": 6680148,
+        "latest_trvl_return_yr": 6680148,
+        "status": 0,
+        "status_date": 0,
+        "uscis_field_office": 3277763,
+        "uscis_service_center": 0,
+        "data_source": 0,
+        "lpr_date": 6671621,
+        "ben_gender": 3635,
+        "rec_date": 8,
+        "decision_date": 0,
+        "decision": 0,
+        "latest_notice_type": 3582645,
+        "latest_notice_date": 3582645,
+        "latest_rfe_date": 6372823,
+        "latest_noid_date": 6520974,
+        "g28_flag": 0,
+        "duplicate_identifier": 0,
+        "duplicate_last": 0,
+        "duplicate_likely": 612,
+        "duplicate_drop_row": 0,
+        "file_original": 0,
+        "row_original": 0
+      },
+      "duplicate_source_key_groups": 0,
+      "duplicate_flag_relationship_errors": 0,
+      "flagged_drop_rows": 2603,
+      "likely_duplicate_rows": 5164,
+      "null_duplicate_flags": 0,
+      "missing_applicant_ids": 604,
+      "missing_source_keys": 0,
+      "decision_before_receipt_rows": 297594,
+      "date_ranges": {
+        "status_date": [
+          "2000-01-26",
+          "2026-02-11"
+        ],
+        "lpr_date": [
+          "1918-04-12",
+          "2025-12-22"
+        ],
+        "rec_date": [
+          "2000-01-01",
+          "2026-02-11"
+        ],
+        "decision_date": [
+          "2000-01-26",
+          "2026-02-11"
+        ],
+        "latest_notice_date": [
+          "2016-06-24",
+          "2026-02-11"
+        ],
+        "latest_rfe_date": [
+          "1999-11-16",
+          "2026-02-11"
+        ],
+        "latest_noid_date": [
+          "2000-11-20",
+          "2026-02-11"
+        ]
+      }
+    }
+  },
+  "final_budget_check": {
+    "work_bytes": 390868992,
+    "free_bytes": 59681837056
+  },
+  "database_bytes": 391131136,
+  "database_sha256": "e0957fb5726b990f694b08c86c0bf8f1d785a5b41d5ad5079ecaac2dfe5a2f9f",
+  "audit_status": "Source integrity/schema/equality checks passed; full data semantics and independent release audits still required",
+  "original_build_artifact": {
+    "database_sha256": "7431fdcb3be8ba87eee249ff563c70d0c683fd8cd1314a8b6b409fa90730e641",
+    "database_bytes": 390868992,
+    "metadata_definitions": "Prior to documented field-description correction; preserved in original build archive"
+  },
+  "metadata_correction": {
+    "completed_utc": "2026-11-03T02:57:01.004221+00:00",
+    "original_database_sha256": "7431fdcb3be8ba87eee249ff563c70d0c683fd8cd1314a8b6b409fa90730e641",
+    "changed_column_rows": [
+      [
+        "daca_applications",
+        "ben_country_of_birth"
+      ],
+      [
+        "daca_applications",
+        "duplicate_drop_row"
+      ],
+      [
+        "daca_applications",
+        "duplicate_last"
+      ],
+      [
+        "daca_applications",
+        "file_original"
+      ],
+      [
+        "daca_applications",
+        "form_type_filled_in"
+      ],
+      [
+        "daca_applications",
+        "row_original"
+      ],
+      [
+        "tps_applications",
+        "ben_country_of_birth"
+      ],
+      [
+        "tps_applications",
+        "duplicate_drop_row"
+      ],
+      [
+        "tps_applications",
+        "duplicate_last"
+      ],
+      [
+        "tps_applications",
+        "file_original"
+      ],
+      [
+        "tps_applications",
+        "row_original"
+      ]
+    ],
+    "changed_cells": {
+      "description": 7,
+      "join_hint": 4
+    },
+    "application_rows_verified_unchanged": 11206545,
+    "comparison": "Full before/after SHA256 over schema and each compact UTF-8 JSON typed row in source-ordinal order; dates ISO-formatted under unchanged types",
+    "table_digests": {
+      "daca_applications": "372d55ae41dd4656b79afd52dca9b156685cae3c0a922e54131caea76af81e99",
+      "tps_applications": "6ffb25e8e280e3ea98074cf8172b80c5d1e85d91b9af675e6b6d77000c5a5de3"
+    },
+    "metadata_and_provenance_unchanged": true,
+    "all_other_column_values_unchanged": true,
+    "original_build_budget_report_scope": "final_budget_check describes the original build, before this metadata-only correction"
+  },
+  "metric_definitions": {
+    "null_duplicate_flags": "Count of NULL duplicate_drop_row only; unknown duplicate_likely is in null_counts.duplicate_likely"
+  }
+}

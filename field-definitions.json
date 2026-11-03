@@ -1,0 +1,104 @@
+{
+  "_source_row": {
+    "description": "One-based ordinal in the pinned processed Parquet; added without dropping source rows.",
+    "join_hint": "Unique only within this table and source commit; not an applicant or application identifier across releases."
+  },
+  "unique_identifier": {
+    "description": "Agency-redacted/pseudonymous applicant identifier provided in the source; it may repeat across applications.",
+    "join_hint": "Not a unique application key. Cross-form, cross-release and EOIR/ICE linkage is not established by this importer."
+  },
+  "ben_year_of_birth": {
+    "description": "Applicant year of birth reported by the source; integer, with source missingness retained."
+  },
+  "ben_country_of_birth": {
+    "description": "Applicant birthplace, not residence. The publisher maps C3 codes to names: failed lookups become NULL in DACA but Unlisted Entry (Any foreign country not listed) in TPS. That TPS category can conflate unresolved/invalid/missing original codes; stored NULL counts do not measure all underlying missingness. ELIS names are retained after publisher UTF-8 repair."
+  },
+  "immigration_status": {
+    "description": "Original source immigration-status field. Values are retained without inferring current lawful status."
+  },
+  "classification": {
+    "description": "Original source classification field; interpret with the USCIS source documentation rather than a newly invented category mapping."
+  },
+  "form_number": {
+    "description": "Application form designation: the tables separately cover DACA I-821D and TPS I-821."
+  },
+  "form_type": {
+    "description": "Source-reported initial/renewal/re-registration form type where available. Legacy-system missingness remains."
+  },
+  "latest_trvl_depart_yr": {
+    "description": "Year of the latest travel departure reported in the source; not a complete travel history."
+  },
+  "latest_trvl_return_yr": {
+    "description": "Year of the latest travel return reported in the source; not a complete travel history."
+  },
+  "status": {
+    "description": "Application/case status recorded in the source snapshot; not necessarily final disposition or current beneficiary status."
+  },
+  "status_date": {
+    "description": "Source date associated with the recorded status; preserved as DATE."
+  },
+  "uscis_field_office": {
+    "description": "Processing field-office label. It does not identify applicant residence.",
+    "join_hint": "Do not substitute ICE offices/AORs or infer residence geography from this USCIS processing office."
+  },
+  "uscis_service_center": {
+    "description": "Processing service-center label; not applicant residence geography."
+  },
+  "data_source": {
+    "description": "USCIS case-management source system, such as C3/CLAIMS3 or ELIS. Fields and missingness vary across systems."
+  },
+  "lpr_date": {
+    "description": "Source lawful-permanent-residence date field, where reported; not a complete longitudinal status history."
+  },
+  "ben_gender": {
+    "description": "Source gender field after publisher harmonization of legacy codes; labels and missingness are retained."
+  },
+  "rec_date": {
+    "description": "Application receipt date reported by USCIS; source duplicate groups use applicant and this date."
+  },
+  "decision_date": {
+    "description": "Application decision date in the source; any date-order anomalies are reported and retained."
+  },
+  "decision": {
+    "description": "Source decision label; no independent recoding of approval/denial or beneficiary status."
+  },
+  "latest_notice_type": {
+    "description": "Most recent source notice-type label; not a complete notice history."
+  },
+  "latest_notice_date": {
+    "description": "Date associated with the most recent source notice."
+  },
+  "latest_rfe_date": {
+    "description": "Most recent request-for-evidence date reported in the source."
+  },
+  "latest_noid_date": {
+    "description": "Most recent notice-of-intent-to-deny date reported in the source."
+  },
+  "g28_flag": {
+    "description": "Original source G-28 representation flag; retained as text, without inferring complete attorney coverage."
+  },
+  "duplicate_identifier": {
+    "description": "Publisher's receipt-date group counter within an applicant grouping; not globally unique.",
+    "join_hint": "Interpret with applicant identifier/source scope; _source_row identifies a stored row."
+  },
+  "duplicate_last": {
+    "description": "Last row within the publisher's applicant/receipt-date group. DACA sorts applicant (with a unique placeholder for each missing ID), receipt date, file_original, row_original; TPS additionally sorts decision_date before file_original/row_original. Later DACA reconstruction reorders rows, so physical _source_row does not reconstruct this flag."
+  },
+  "duplicate_likely": {
+    "description": "Publisher's likely-duplicate flag for repeated applicant/receipt-date groups; NULL when applicant ID or receipt date is missing."
+  },
+  "duplicate_drop_row": {
+    "description": "Publisher recommendation: coalesce(duplicate_likely,FALSE) AND NOT duplicate_last. Every row is retained. On unknown duplicate_likely rows this flag is false because of coalescing, not verified absence of duplication."
+  },
+  "file_original": {
+    "description": "Original agency input-file identifier retained by the publisher.",
+    "join_hint": "Pair with row_original and table/source commit. This pair is nonmissing and unique in both full pinned tables; no stability across releases is established."
+  },
+  "row_original": {
+    "description": "Row number in the original agency input file, distinct from _source_row in the processed Parquet.",
+    "join_hint": "Pair with file_original and table/source commit; the pair is nonmissing and unique in this snapshot, not a persistent application or person ID."
+  },
+  "form_type_filled_in": {
+    "description": "DACA: copies form_type for ELIS rows and every row with a missing applicant ID. Only C3 rows with a nonmissing ID are reconstructed: within applicant, ordered by decision_date, cumulative approvals including the current row give DACA - Initial when at most one, otherwise DACA - Renewal; an unknown cumulative count gives NULL. Duplicate approvals count, and a denied/pending renewal after the first approval can still be labelled Initial. This is not a uniformly observed or uniformly imputed field."
+  }
+}

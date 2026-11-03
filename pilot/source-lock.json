@@ -1,0 +1,368 @@
+{
+  "dataset": "uscis-pilot",
+  "is_pilot": true,
+  "data_license": "CC0-1.0",
+  "source_commit": "dfe86ad18fd04ed6ed8281366d8bfb9c56716c1b",
+  "source_page": "https://deportationdata.org/data/processed/uscis.html",
+  "codebook": "https://deportationdata.org/docs/uscis/codebook-processed.html",
+  "tables": [
+    {
+      "table": "daca_applications",
+      "file": "daca_applications.parquet",
+      "local_path": "daca_applications.parquet",
+      "url": "local-pilot:daca_applications.parquet",
+      "repo": "deportationdata/uscis",
+      "commit": "dfe86ad18fd04ed6ed8281366d8bfb9c56716c1b",
+      "bytes": 72007,
+      "sha256": "80a852abd5e84479c305ee1e97b0aed18a84b26001fdc23e9141e785c2a29666",
+      "rows": 2048,
+      "schema": [
+        [
+          "unique_identifier",
+          "VARCHAR"
+        ],
+        [
+          "ben_year_of_birth",
+          "INTEGER"
+        ],
+        [
+          "ben_country_of_birth",
+          "VARCHAR"
+        ],
+        [
+          "immigration_status",
+          "VARCHAR"
+        ],
+        [
+          "classification",
+          "VARCHAR"
+        ],
+        [
+          "form_number",
+          "VARCHAR"
+        ],
+        [
+          "form_type",
+          "VARCHAR"
+        ],
+        [
+          "latest_trvl_depart_yr",
+          "INTEGER"
+        ],
+        [
+          "latest_trvl_return_yr",
+          "INTEGER"
+        ],
+        [
+          "status",
+          "VARCHAR"
+        ],
+        [
+          "status_date",
+          "DATE"
+        ],
+        [
+          "uscis_field_office",
+          "VARCHAR"
+        ],
+        [
+          "uscis_service_center",
+          "VARCHAR"
+        ],
+        [
+          "data_source",
+          "VARCHAR"
+        ],
+        [
+          "lpr_date",
+          "DATE"
+        ],
+        [
+          "ben_gender",
+          "VARCHAR"
+        ],
+        [
+          "rec_date",
+          "DATE"
+        ],
+        [
+          "decision_date",
+          "DATE"
+        ],
+        [
+          "decision",
+          "VARCHAR"
+        ],
+        [
+          "latest_notice_type",
+          "VARCHAR"
+        ],
+        [
+          "latest_notice_date",
+          "DATE"
+        ],
+        [
+          "latest_rfe_date",
+          "DATE"
+        ],
+        [
+          "latest_noid_date",
+          "DATE"
+        ],
+        [
+          "g28_flag",
+          "VARCHAR"
+        ],
+        [
+          "duplicate_identifier",
+          "INTEGER"
+        ],
+        [
+          "duplicate_last",
+          "BOOLEAN"
+        ],
+        [
+          "duplicate_likely",
+          "BOOLEAN"
+        ],
+        [
+          "duplicate_drop_row",
+          "BOOLEAN"
+        ],
+        [
+          "file_original",
+          "VARCHAR"
+        ],
+        [
+          "row_original",
+          "INTEGER"
+        ],
+        [
+          "form_type_filled_in",
+          "VARCHAR"
+        ]
+      ],
+      "expected_null_counts": {
+        "unique_identifier": 0,
+        "ben_year_of_birth": 0,
+        "ben_country_of_birth": 0,
+        "immigration_status": 1986,
+        "classification": 1401,
+        "form_number": 0,
+        "form_type": 0,
+        "latest_trvl_depart_yr": 1951,
+        "latest_trvl_return_yr": 1950,
+        "status": 0,
+        "status_date": 0,
+        "uscis_field_office": 2048,
+        "uscis_service_center": 0,
+        "data_source": 0,
+        "lpr_date": 2041,
+        "ben_gender": 0,
+        "rec_date": 0,
+        "decision_date": 0,
+        "decision": 0,
+        "latest_notice_type": 13,
+        "latest_notice_date": 13,
+        "latest_rfe_date": 1999,
+        "latest_noid_date": 2042,
+        "g28_flag": 0,
+        "duplicate_identifier": 0,
+        "duplicate_last": 0,
+        "duplicate_likely": 0,
+        "duplicate_drop_row": 0,
+        "file_original": 0,
+        "row_original": 0,
+        "form_type_filled_in": 0
+      },
+      "row_groups": 1,
+      "schema_evidence": "Complete local pilot export checked against the saved first 2048-row sample; full-source identity is separately recorded below and not verified by this sample.",
+      "original_full_source": {
+        "url": "https://media.githubusercontent.com/media/deportationdata/uscis/dfe86ad18fd04ed6ed8281366d8bfb9c56716c1b/data/daca-latest.parquet",
+        "bytes": 81070358,
+        "sha256": "ce7ad4ebece3a74623837bcc3abd80b9518efb83993cde2b3a40ead28cf9b2eb",
+        "rows": 4526373,
+        "commit": "dfe86ad18fd04ed6ed8281366d8bfb9c56716c1b",
+        "git_lfs_pointer_blob": "2cb80e96fa102900875aa6c10ec54415f2edcbe4",
+        "row_groups": 5
+      }
+    },
+    {
+      "table": "tps_applications",
+      "file": "tps_applications.parquet",
+      "local_path": "tps_applications.parquet",
+      "url": "local-pilot:tps_applications.parquet",
+      "repo": "deportationdata/uscis",
+      "commit": "dfe86ad18fd04ed6ed8281366d8bfb9c56716c1b",
+      "bytes": 74447,
+      "sha256": "8ff5867835f6c64313df1a1f02455d2331f79d349aac6ab2fa7aed8ebf7cec96",
+      "rows": 2048,
+      "schema": [
+        [
+          "unique_identifier",
+          "VARCHAR"
+        ],
+        [
+          "ben_year_of_birth",
+          "INTEGER"
+        ],
+        [
+          "ben_country_of_birth",
+          "VARCHAR"
+        ],
+        [
+          "immigration_status",
+          "VARCHAR"
+        ],
+        [
+          "classification",
+          "VARCHAR"
+        ],
+        [
+          "form_number",
+          "VARCHAR"
+        ],
+        [
+          "form_type",
+          "VARCHAR"
+        ],
+        [
+          "latest_trvl_depart_yr",
+          "INTEGER"
+        ],
+        [
+          "latest_trvl_return_yr",
+          "INTEGER"
+        ],
+        [
+          "status",
+          "VARCHAR"
+        ],
+        [
+          "status_date",
+          "DATE"
+        ],
+        [
+          "uscis_field_office",
+          "VARCHAR"
+        ],
+        [
+          "uscis_service_center",
+          "VARCHAR"
+        ],
+        [
+          "data_source",
+          "VARCHAR"
+        ],
+        [
+          "lpr_date",
+          "DATE"
+        ],
+        [
+          "ben_gender",
+          "VARCHAR"
+        ],
+        [
+          "rec_date",
+          "DATE"
+        ],
+        [
+          "decision_date",
+          "DATE"
+        ],
+        [
+          "decision",
+          "VARCHAR"
+        ],
+        [
+          "latest_notice_type",
+          "VARCHAR"
+        ],
+        [
+          "latest_notice_date",
+          "DATE"
+        ],
+        [
+          "latest_rfe_date",
+          "DATE"
+        ],
+        [
+          "latest_noid_date",
+          "DATE"
+        ],
+        [
+          "g28_flag",
+          "VARCHAR"
+        ],
+        [
+          "duplicate_identifier",
+          "INTEGER"
+        ],
+        [
+          "duplicate_last",
+          "BOOLEAN"
+        ],
+        [
+          "duplicate_likely",
+          "BOOLEAN"
+        ],
+        [
+          "duplicate_drop_row",
+          "BOOLEAN"
+        ],
+        [
+          "file_original",
+          "VARCHAR"
+        ],
+        [
+          "row_original",
+          "INTEGER"
+        ]
+      ],
+      "expected_null_counts": {
+        "unique_identifier": 0,
+        "ben_year_of_birth": 1072,
+        "ben_country_of_birth": 2,
+        "immigration_status": 406,
+        "classification": 2048,
+        "form_number": 0,
+        "form_type": 5,
+        "latest_trvl_depart_yr": 2048,
+        "latest_trvl_return_yr": 2048,
+        "status": 0,
+        "status_date": 0,
+        "uscis_field_office": 976,
+        "uscis_service_center": 0,
+        "data_source": 0,
+        "lpr_date": 2044,
+        "ben_gender": 4,
+        "rec_date": 0,
+        "decision_date": 0,
+        "decision": 0,
+        "latest_notice_type": 1122,
+        "latest_notice_date": 1122,
+        "latest_rfe_date": 1961,
+        "latest_noid_date": 2005,
+        "g28_flag": 0,
+        "duplicate_identifier": 0,
+        "duplicate_last": 0,
+        "duplicate_likely": 0,
+        "duplicate_drop_row": 0,
+        "file_original": 0,
+        "row_original": 0
+      },
+      "row_groups": 1,
+      "schema_evidence": "Complete local pilot export checked against the saved first 2048-row sample; full-source identity is separately recorded below and not verified by this sample.",
+      "original_full_source": {
+        "url": "https://media.githubusercontent.com/media/deportationdata/uscis/dfe86ad18fd04ed6ed8281366d8bfb9c56716c1b/data/tps-latest.parquet",
+        "bytes": 127228577,
+        "sha256": "bb8a5edd1e64516dd389dc29bf50aede3758455ef7704c9dd73afab20f758ab7",
+        "rows": 6680172,
+        "commit": "dfe86ad18fd04ed6ed8281366d8bfb9c56716c1b",
+        "git_lfs_pointer_blob": "9e3f97a54c2dcd375e10e09a125d3563f91dd0f5",
+        "row_groups": 7
+      }
+    }
+  ],
+  "sample_description": "First2048 rows of each original source; integration sample, not statistically representative. Original full-source hashes are not verified by this sample."
+}
